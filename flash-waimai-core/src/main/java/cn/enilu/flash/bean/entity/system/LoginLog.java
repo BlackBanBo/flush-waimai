@@ -20,7 +20,7 @@ import java.util.Date;
 @Data
 public class LoginLog {
     @Id
-    @GeneratedValue
+    @GeneratedValue // 设置主键生成策略
     private Integer id;
     @Column
     private String logname;
@@ -32,7 +32,7 @@ public class LoginLog {
     private String message;
     @Column
     private String ip;
-    @CreationTimestamp
+    @CreationTimestamp // 给当前创建时间插入一个默认值
     @Column(name = "create_time",columnDefinition="DATETIME COMMENT '创建时间'")
     private Date createTime;
 }

@@ -27,16 +27,16 @@ public abstract class BaseEntity implements Serializable {
     @Id
     @GeneratedValue
     private Long id;
-    @CreatedDate
+    @CreatedDate // 创建时间
     @Column(name = "create_time",columnDefinition="DATETIME COMMENT '创建时间/注册时间'")
     private Date createTime;
     @Column(name = "create_by",columnDefinition="bigint COMMENT '创建人'")
-    @CreatedBy
+    @CreatedBy // 创建用户字段
     private Long createBy;
-    @LastModifiedDate
+    @LastModifiedDate // 最后修改的时间
     @Column(name = "modify_time",columnDefinition="DATETIME COMMENT '最后更新时间'")
     private Date modifyTime;
-    @LastModifiedBy
+    @LastModifiedBy // 最后修改的用户
     @Column(name = "modify_by",columnDefinition="bigint COMMENT '最后更新人'")
     private Long modifyBy;
 }

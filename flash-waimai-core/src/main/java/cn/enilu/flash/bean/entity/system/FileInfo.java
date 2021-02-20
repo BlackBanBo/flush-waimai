@@ -15,11 +15,11 @@ import javax.persistence.Transient;
 @Table(appliesTo = "t_sys_file_info",comment = "文件")
 @EntityListeners(AuditingEntityListener.class)
 public class FileInfo extends BaseEntity {
-    @Column
+    @Column(name = "original_file_name",columnDefinition = "VARCHAR(255) COMMENT '原文件名'")
     private String originalFileName;
-    @Column
+    @Column(name = "real_file_name",columnDefinition = "VARCHAR(255) COMMENT '实际文件名'")
     private String realFileName;
-    @Transient
+    @Transient // 该字段并非数据库表的映射字段，ORM框架生成表时将忽略该属性
     private String ablatePath;
 
 }

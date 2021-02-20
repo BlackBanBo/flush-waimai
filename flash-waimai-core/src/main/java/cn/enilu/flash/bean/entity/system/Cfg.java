@@ -18,7 +18,7 @@ import javax.validation.constraints.NotBlank;
 @Entity(name="t_sys_cfg")
 @Table(appliesTo = "t_sys_cfg",comment = "系统参数")
 @Data
-@EntityListeners(AuditingEntityListener.class)
+@EntityListeners(AuditingEntityListener.class) // 监听这个实体类的变化
 public class Cfg  extends BaseEntity {
     @NotBlank(message = "参数名并能为空")
     @Column(name = "cfg_name",columnDefinition = "VARCHAR(256) COMMENT '参数名'")
